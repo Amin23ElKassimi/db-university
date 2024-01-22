@@ -34,7 +34,9 @@ WHERE DATE(`date`) = '2020-06-20' AND TIME(`hour`) > '14:00:00';
 SELECT * FROM `degrees` WHERE `level` = "magistrale"; 
 
 - [ ]  Da quanti dipartimenti è composta l'università? (12)
-SELECT COUNT(*) as `num_departments` FROM `departments`; 
+
+SELECT COUNT(*) as `num_departments`
+FROM `departments`; 
 
 - [ ]  Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
 SELECT * 
@@ -97,3 +99,22 @@ FROM `exam_student`
 GROUP BY `exam_id`; 
 
 - [ ]  Contare quanti corsi di laurea ci sono per ogni dipartimento 
+
+SELECT `department_id`,
+ COUNT(*) FROM `degrees` 
+GROUP BY `department_id`;
+
+department_id 	COUNT(*) 	
+1               10
+2 	            4
+3 	            4
+4 	            9
+5 	            4
+6 	            6
+7 	            7
+8 	            8
+9 	            5
+10 	            8
+11 	            3
+12 	            7
+
